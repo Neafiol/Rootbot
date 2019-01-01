@@ -1,0 +1,1 @@
+pyinstaller telsent.py -F --paths D:\files\programers_files\Projects\ROOTBOT

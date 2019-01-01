@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head >
+    <meta charset="utf-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>rootbot</title>
+
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <!-- Bootstrap css-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+    <!--Google Icon Font-->
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Propeller css -->
+    <link href="/propeller.min.css" rel="stylesheet">
+    <link href="/style.css" rel="stylesheet">
+
+    <script type="text/javascript" src="/cosole.js"></script>
+
+</head>
+
+<body>
+    <h1 class="pmd-display2">Console ROOTBOT</h1>
+
+    <div class="col-md-6 col-sm-6 col-xs-12 masonry-brick">
+        <div class="pmd-card pmd-card-default pmd-z-depth pmd-card-body">
+                    <form method="post" action="quiz_red" class="form-horizontal">
+                        <div class="form-group">
+                            <label  class="control-label">QuizName</label>
+                            <input type="text" name="name" value="noname" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">QuizText</label>
+                            <textarea name="text" class="form-control"></textarea>
+                        </div>
+                        <div class="pmd-card-actions">
+                            <input type="submit" name="action" value="Add Quiz" class="btn pmd-ripple-effect btn-primary"  >
+                            <input type="submit" name="action" value="Distribution" class="btn pmd-ripple-effect btn-primary" >
+                        </div>
+                    </form>
+
+                    <h3 class="pmd-display1">Активных пользователей: <i>{{ subscount }}</i></h3>
+
+        </div>
+    </div>
+
+    <div class="col-md-6 col-sm-6 col-xs-12 masonry-brick">
+        <div class="pmd-card pmd-card-default pmd-z-depth">
+                    <div class="pmd-card-body">
+                        <form action="quiz_red" method="post" class="form-horizontal">
+                            <div class="form-group">
+                                <label class="control-label">Номер вопроса</label>
+                                <input type="text" name="quizid" class="form-control">
+                            </div>
+                            <div class="pmd-card-actions">
+                                <input type="submit" name="action" value="Close" class="btn pmd-ripple-effect btn-primary"  >
+                                <input type="submit" name="action" value="Delete" class="btn pmd-ripple-effect btn-primary" >
+
+                            </div>
+                        </form>
+                    </div>
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                          <th>ID</th>
+                          <th>NAME</th>
+                        </tr>
+                     </thead>
+                    <tbody>
+                           % for qs in cards:
+                            <tr><td>{{  qs[0] }}</td><td>{{qs[1]}}</td></tr>
+                           % end
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+
+    </div>
+
+
+
+    <!-- jQuery before Propeller.js -->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/propeller.min.js"></script>
+
+</body>
+</html>
